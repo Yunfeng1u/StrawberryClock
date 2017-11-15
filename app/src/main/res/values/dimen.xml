@@ -1,0 +1,178 @@
+<resources>
+
+    <!--lay_dp,lay_sp文件中的长度，只能从该文件引用，禁止从外部直接引用-->
+
+    <!--图标尺寸-->
+    <dimen name="mini_icon_size_0">@dimen/dp8</dimen>
+    <dimen name="mini_icon_size_1">@dimen/dp10</dimen>
+    <dimen name="mini_icon_size">@dimen/dp12</dimen>
+    <dimen name="min_icon_size">@dimen/dp14</dimen>
+    <dimen name="small_0_icon_size">@dimen/dp16</dimen>
+
+    <dimen name="small_1_icon_size">@dimen/dp18</dimen>
+    <dimen name="small_2_icon_size">@dimen/dp20</dimen>
+    <dimen name="small_3_icon_size">@dimen/dp22</dimen>
+    <dimen name="small_24_icon_size">@dimen/dp24</dimen>
+    <dimen name="small_4_icon_size">@dimen/dp26</dimen>
+    <dimen name="small_5_icon_size">@dimen/dp28</dimen>
+
+    <dimen name="normal_0_icon_size">@dimen/dp34</dimen>
+    <dimen name="normal_1_icon_size">@dimen/dp40</dimen>
+    <dimen name="normal_2_icon_size">@dimen/dp48</dimen>
+    <dimen name="normal_3_icon_size">@dimen/dp56</dimen>
+
+    <dimen name="large_0_icon_size">@dimen/dp60</dimen>
+    <dimen name="large_1_icon_size">@dimen/dp80</dimen>
+    <dimen name="large_2_icon_size">@dimen/dp90</dimen>
+    <dimen name="large_3_icon_size">@dimen/dp110</dimen>
+    <dimen name="large_4_icon_size">@dimen/dp150</dimen>
+
+
+    <!--间距长度-->
+    <dimen name="tiny_0_space">@dimen/dp1</dimen>
+    <dimen name="tiny_1_space">@dimen/dp2</dimen>
+    <dimen name="small_1_space">@dimen/dp4</dimen>
+    <dimen name="small_2_space">@dimen/dp6</dimen>
+    <dimen name="small_3_space">@dimen/dp8</dimen>
+    <dimen name="small_4_space">@dimen/dp10</dimen>
+    <dimen name="medium_1_space">@dimen/dp12</dimen>
+    <dimen name="medium_2_space">@dimen/dp14</dimen>
+    <dimen name="medium_3_space">@dimen/dp16</dimen>
+    <dimen name="medium_4_space">@dimen/dp18</dimen>
+
+    <dimen name="_normal_1_space">@dimen/dp_20</dimen>
+    <dimen name="normal_1_space">@dimen/dp20</dimen>
+    <dimen name="normal_1_5_space">@dimen/dp26</dimen>
+    <dimen name="_normal_1_5_space">@dimen/dp_26</dimen>
+    <dimen name="normal_2_space">@dimen/dp30</dimen>
+    <dimen name="normal_2_5_space">@dimen/dp32</dimen>
+    <dimen name="normal_2_6_space">@dimen/dp36</dimen>
+    <dimen name="normal_3_space">@dimen/dp40</dimen>
+
+    <dimen name="large_0_space">@dimen/dp50</dimen>
+    <dimen name="large_1_space">@dimen/dp60</dimen>
+    <dimen name="large_2_space">@dimen/dp80</dimen>
+
+
+
+    <!--特殊间距-->
+    <dimen name="filter_star_padding">@dimen/dp_8</dimen>
+
+
+    <!--控件大小-->
+    <dimen name="new_tag_min_width">@dimen/dp76</dimen>
+    <dimen name="small_divider_height">@dimen/dp0.6</dimen>
+    <dimen name="medium_divider_height">@dimen/dp0.8</dimen>
+    <dimen name="big_divider_height">@dimen/dp1.2</dimen>
+    <dimen name="order_note_height">@dimen/dp120</dimen>
+    <dimen name="radio_pickup_item_min_height">@dimen/dp60</dimen>
+    <dimen name="plan_logo_size">@dimen/dp200</dimen>
+    <dimen name="payment_result_icon_size">@dimen/dp140</dimen>
+    <dimen name="detail_line_width">@dimen/dp320</dimen>
+    <dimen name="setting_radio_button_width">@dimen/dp36</dimen>
+    <dimen name="title_shadow_height_s">@dimen/dp4</dimen>
+    <dimen name="title_shadow_height">@dimen/dp12</dimen>
+    <dimen name="order_detail_stick_height">@dimen/dp5</dimen>
+
+    <dimen name="tiny_elevation_size">@dimen/dp1</dimen>
+    <dimen name="small_elevation_size">@dimen/dp2</dimen>
+    <dimen name="medium_elevation_size">@dimen/dp4</dimen>
+
+    <!--圆弧-->
+    <dimen name="half_circle_radius">1080dp</dimen>
+
+    <dimen name="round_corner_radius_xxs">@dimen/dp2</dimen>
+    <dimen name="round_corner_radius_xs">@dimen/dp3</dimen>
+    <dimen name="round_corner_radius_s">@dimen/dp4</dimen>
+    <dimen name="round_corner_radius_m">@dimen/dp5</dimen>
+    <dimen name="round_corner_radius_l">@dimen/dp6</dimen>
+    <dimen name="round_corner_radius_xl">@dimen/dp10</dimen>
+
+    <dimen name="small_fab_shadow_radius">@dimen/dp4</dimen>
+
+    <dimen name="small_dot_size">@dimen/dp3</dimen>
+    <dimen name="normal_dot_size">@dimen/dp5</dimen>
+    <dimen name="plan_line_size">@dimen/dp60</dimen>
+    <dimen name="city_line_size">@dimen/dp90</dimen>
+
+    <dimen name="filter_box_stroke">@dimen/dp0.5</dimen>
+    <dimen name="small_stroke">@dimen/dp0.8</dimen>
+    <dimen name="normal_stroke">@dimen/dp1</dimen>
+    <dimen name="big_stroke">@dimen/dp2</dimen>
+
+    <dimen name="update_dialog_minHeight">@dimen/dp240</dimen>
+    <dimen name="update_dialog_minWidth">@dimen/dp300</dimen>
+
+    <dimen name="rating_bar_width">@dimen/dp180</dimen>
+
+    <!--文字-->
+    <item name="tiny_line_spacing_multiplier" format="float" type="dimen">1.1</item>
+    <item name="small_line_spacing_multiplier" format="float" type="dimen">1.2</item>
+    <item name="normal_line_spacing_multiplier" format="float" type="dimen">1.4</item>
+    <item name="large_line_spacing_multiplier" format="float" type="dimen">1.6</item>
+
+    <dimen name="min_text_size">@dimen/sp9</dimen>
+    <dimen name="small_0_text_size">@dimen/sp10</dimen>
+    <dimen name="small_1_text_size">@dimen/sp12</dimen>
+    <dimen name="small_2_text_size">@dimen/sp13</dimen>
+    <dimen name="small_3_text_size">@dimen/sp14</dimen>
+    <dimen name="small_4_text_size">@dimen/sp15</dimen>
+    <dimen name="small_5_text_size">@dimen/sp16</dimen>
+
+    <dimen name="normal_1_text_size">@dimen/sp18</dimen>
+    <dimen name="normal_2_text_size">@dimen/sp19</dimen>
+    <dimen name="normal_3_text_size">@dimen/sp21</dimen>
+    <dimen name="normal_4_text_size">@dimen/sp22</dimen>
+
+
+    <dimen name="large_1_text_size">@dimen/sp25</dimen>
+    <dimen name="large_2_text_size">@dimen/sp30</dimen>
+
+    <!--CardView-->
+    <dimen name="touch_raise">@dimen/dp6</dimen>
+    <dimen name="card_view_elevation">@dimen/dp2</dimen>
+
+
+    <dimen name="plan_day_dot_size">@dimen/dp4</dimen>
+
+    <!--TAG-->
+    <dimen name="tag_radius">@dimen/dp3.5</dimen>
+    <dimen name="tag_padding">@dimen/dp3</dimen>
+
+    <!--LABEL-->
+    <dimen name="label_height">@dimen/dp36</dimen>
+    <dimen name="label_distance">@dimen/dp32</dimen>
+
+    <!--DIALOG-->
+    <dimen name="dialog_update_height">@dimen/dp320</dimen>
+
+    <dimen name="hotel_detail_map_height">@dimen/dp100</dimen>
+
+    <dimen name="about_us_bar_height">@dimen/dp180</dimen>
+
+    <dimen name="time_selector_height">@dimen/dp160</dimen>
+
+    <dimen name="map_pop_window_content_width">@dimen/dp180</dimen>
+
+    <dimen name="qr_scan_size">@dimen/dp200</dimen>
+
+    <!--HotelBeds List Promotions-->
+    <dimen name="bv_triangleLength">@dimen/dp15</dimen>
+    <dimen name="bv_mRadius">@dimen/dp2</dimen>
+    <dimen name="plan_detail_rv_bottom_padding0">@dimen/dp60</dimen>
+    <dimen name="plan_detail_rv_bottom_padding">@dimen/dp240</dimen>
+    <dimen name="plan_detail_rv_bottom_padding2">@dimen/dp280</dimen>
+    <dimen name="plan_detail_panel_parallax_offset">@dimen/dp240</dimen>
+    <!--Map Marker-->
+    <dimen name="marker_size">@dimen/dp10</dimen>
+
+    <dimen name="dash_height">@dimen/dp1</dimen>
+    <dimen name="dash_gap">@dimen/dp3</dimen>
+    <dimen name="dash_width">@dimen/dp6</dimen>
+
+    <dimen name="tour_tag_stroke_width">@dimen/dp1.5</dimen>
+
+    <dimen name="action_bar_size">@dimen/dp56</dimen>
+
+
+</resources>

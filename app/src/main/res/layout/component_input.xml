@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/et_input"
+        style="@style/medium_grey_text_style"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/small_3_space"
+        android:layout_marginEnd="@dimen/medium_3_space"
+        android:layout_marginStart="@dimen/medium_3_space"
+        android:layout_marginTop="@dimen/small_3_space"
+        android:maxLength="64"
+        android:maxLines="1"
+        android:singleLine="true" />
+</RelativeLayout>

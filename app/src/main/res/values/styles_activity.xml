@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="ActivityTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/deep_orange</item>
+    </style>
+
+    <!--<style name="LauncherTheme" parent="@style/AppTheme">-->
+        <!--<item name="android:windowBackground">@drawable/launcher</item>-->
+        <!--<item name="android:windowFullscreen">false</item>-->
+    <!--</style>-->
+
+    <style name="MainActivityTheme" parent="ActivityTheme">
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+    </style>
+
+    <!--输入框主题-->
+    <style name="InputActivityTheme" parent="ActivityTheme">
+        <item name="android:windowSoftInputMode">stateAlwaysHidden|adjustResize</item>
+        <item name="android:windowBackground">@color/light_grey_background_color</item>
+    </style>
+
+    <style name="WhiteInputActivityTheme" parent="ActivityTheme">
+        <item name="android:windowSoftInputMode">stateAlwaysHidden|adjustResize</item>
+        <item name="android:windowBackground">@color/pure_white</item>
+    </style>
+</resources>

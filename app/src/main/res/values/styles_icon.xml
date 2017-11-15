@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="order_step_1_list_icon_style">
+        <item name="android:layout_marginRight">@dimen/small_4_space</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">@dimen/small_3_icon_size</item>
+        <item name="android:layout_height">@dimen/small_3_icon_size</item>
+    </style>
+
+    <style name="order_item_layout_style" parent="MWStyle">
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/small_4_space</item>
+        <item name="android:paddingTop">@dimen/medium_3_space</item>
+        <item name="android:paddingBottom">@dimen/medium_3_space</item>
+    </style>
+
+</resources>

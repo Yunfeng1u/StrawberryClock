@@ -1,17 +1,89 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+
     </style>
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
+    <style name="SwitchCompatStyle">
+        <item name="colorAccent">@color/transparent_pink_color</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MMStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MWStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WWStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--列表单项选择样式-->
+    <style name="normal_list_item_selector_style" parent="MWStyle">
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+
+    <!--图片样式-->
+    <style name="normal_image_style">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="full_width_image_style" parent="normal_image_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--滚动组件-->
+    <style name="NoOverScrollStyle">
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="OverScrollStyle">
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">always</item>
+    </style>
+
+
+    <style name="NextEditTextStyle" parent="MWStyle">
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:windowSoftInputMode">stateHidden|adjustResize</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/dark_grey_text_color</item>
+        <item name="android:textSize">@dimen/small_3_text_size</item>
+    </style>
+
+    <style name="line_et_style" parent="NextEditTextStyle">
+        <item name="android:drawablePadding">@dimen/small_3_space</item>
+        <item name="android:paddingTop">@dimen/medium_1_space</item>
+        <item name="android:paddingBottom">@dimen/small_3_space</item>
+    </style>
+
+    <style name="social_login_et_style" parent="NextEditTextStyle">
+        <item name="android:layout_marginLeft">@dimen/medium_1_space</item>
+        <item name="android:layout_marginRight">@dimen/medium_1_space</item>
+        <item name="android:paddingTop">@dimen/medium_1_space</item>
+        <item name="android:paddingBottom">@dimen/medium_1_space</item>
+    </style>
+
+    <style name="ll_with_divider" parent="MWStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/shape_line_divider</item>
+    </style>
+
+    <style name="ll_with_large_divider" parent="MWStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/shape_line_divider_large</item>
+    </style>
 
 </resources>

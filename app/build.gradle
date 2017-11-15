@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
@@ -21,16 +23,20 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile project(":base_library")
+    compile 'com.android.support:support-v4:26.0.2'
+    compile 'com.android.support:support-v13:26.0.2'
     compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'com.android.support:design:26.0.2'
-    compile  "com.android.support:recyclerview-v7:26.0.2"
-    compile  "com.android.support:cardview-v7:26.0.2"
-
-    // json解析
-    compile  'com.google.code.gson:gson:2.8.0'
-
-    // 自定义奔溃界面
+    compile "com.android.support:recyclerview-v7:26.0.2"
+    compile "com.android.support:cardview-v7:26.0.2"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.8.0'
     compile 'cat.ereza:customactivityoncrash:1.5.0'
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    compile ('com.wdullaer:materialdatetimepicker:3.4.0') {
+        exclude group: 'com.android.support'
+    }
 }

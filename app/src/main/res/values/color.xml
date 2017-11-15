@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#ff6f69</color>
+    <color name="colorPrimaryDark">#ef5b55</color>
+    <color name="colorAccent">#ff6f69</color>
+
+    <color name="pure_white">#ffffff</color>
+
+    <color name="main_pink">#ff3574</color>
+    <color name="main_pink_pressed">#d7276b</color>
+    <color name="transparent_pink_color">#99ff3574</color>
+    <color name="transparent_pink_color_normal">#bbff3574</color>
+    <color name="transparent_pink_color_heavy">#CCE5004F</color>
+
+    <color name="deep_orange">#ef5350</color>
+    <color name="light_orange">#ff8176</color>
+
+
+    <color name="deep_green">#40ba83</color>
+    <color name="light_green">#5ed19f</color>
+
+    <color name="main_yellow">#eac00d</color>
+    <color name="dark_yellow">#a7a36a</color>
+    <color name="main_grey">#e5e9ea</color>
+
+    <color name="brown">#bca993</color>
+
+    <color name="tab_background_color">#252121</color>
+    <color name="status_bar_color">#141212</color>
+    <color name="tab_shadow_color">#56000000</color>
+
+    <color name="transparent_white">#00ffffff</color>
+
+    <color name="light_white_bg">#fdfdfd</color>
+    <color name="dark_bg">#002b43</color>
+
+    <color name="light_grey">#cccccc</color>
+
+    <color name="order_detail_grey_color">#adadad</color>
+    <color name="light_grey_purple_color">#eceaf2</color>
+    <color name="detail_items_color">#f5f6f8</color>
+    <color name="light_grey_background_color">#f9f9f9</color>
+    <color name="light_grey_color_new">#c3c3c3</color>
+    <color name="light_grey_color_new2">#f4f4f4</color>
+    <color name="light_grey_color">#eaeaea</color>
+    <color name="light_grey_color_heavy">#e6eaf0</color>
+    <color name="light_grey_color_medium">#bababa</color>
+    <color name="light_grey_color_dark">#696969</color>
+    <color name="E9EDF4">#E9EDF4</color>
+    <color name="medium_grey_color">#b9b9b9</color>
+    <color name="medium_1_grey_color">#a3a3a3</color>
+    <color name="dark_grey_color">#363636</color>
+    <color name="dark_grey_color_0">#707070</color>
+    <color name="plan_line_color">#cacaca</color>
+
+    <!--半透明背景或遮罩-->
+    <color name="transparent_half_grey_color">#b2dfdfdf</color>
+    <color name="transparent_heavy_white_color">#e6ffffff</color>
+    <color name="transparent_grey_color">#b8ebebeb</color>
+
+    <color name="transparent_black_color_cover">#28000000</color>
+    <color name="transparent_heavy_black_color">#b43e3e3e</color>
+    <color name="transparent_heavy_black_color_40">#66000000</color>
+    <color name="transparent_heavy_black_color_50">#80000000</color>
+    <color name="transparent_heavy_black_color_60">#99000000</color>
+    <color name="transparent_half_black_color">#c0000000</color>
+
+    <!--字体颜色-->
+    <color name="light_grey_text_color_0">#e7e7e7</color>
+    <color name="light_grey_text_color_1">#c4c4c4</color>
+    <color name="light_grey_text_color">#ffa09ba3</color>
+    <color name="medium_grey_text_color">#ff828282</color>
+    <color name="medium_grey_text_color2">#ff606060</color>
+    <color name="dark_grey_text_color">#4b4b4b</color>
+
+
+    <color name="list_background">#f8f9fb</color>
+
+    <!--Tag Layout Color-->
+    <color name="tag_bg">#eeeeee</color>
+    <color name="tag_border">#eeeeee</color>
+
+
+    <color name="ripple_color">#4b3d3d3d</color>
+</resources>

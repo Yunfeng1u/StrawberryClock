@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="light_button_style" parent="dark_grey_text_style">
+        <item name="android:background">@drawable/shape_circle_white</item>
+        <item name="android:padding">@dimen/small_3_space</item>
+        <item name="android:layout_margin">@dimen/small_3_space</item>
+    </style>
+
+    <style name="light_button_layout_style" parent="MWStyle">
+        <item name="android:background">@drawable/shape_circle_white</item>
+        <item name="android:padding">@dimen/medium_1_space</item>
+        <item name="android:layout_marginTop">@dimen/medium_1_space</item>
+        <item name="android:layout_marginBottom">@dimen/medium_1_space</item>
+        <item name="android:layout_marginStart">@dimen/medium_3_space</item>
+        <item name="android:layout_marginEnd">@dimen/medium_3_space</item>
+    </style>
+
+    <style name="repeat_days_style" parent="dark_grey_text_style">
+        <item name="android:background">@drawable/shape_selector_week</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+</resources>
