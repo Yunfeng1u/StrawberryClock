@@ -25,6 +25,10 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
 
     lateinit var weekdays: Array<CheckBox>
 
+    val elevation by lazy {
+        ResourceHelper.getDimensionPixelSize(R.dimen.medium_elevation_size).toFloat()
+    }
+
     override fun init() {
         val tenMinutesAfter = Calendar.getInstance()
         tenMinutesAfter.add(Calendar.MINUTE, 10)
@@ -132,7 +136,19 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
         }
     }
 
+    fun setButtonShadow(button: CompoundButton, isChecked: Boolean){
+        if(isChecked){
+            button.elevation = elevation;
+        }else{
+            button.elevation = 0f;
+        }
+    }
+
     val listener = CompoundButton.OnCheckedChangeListener { button: CompoundButton, isChecked: Boolean ->
+        if (findIndex(button.id) >= 0) {
+            setButtonShadow(button, isChecked)
+        }
+
         if (!button.isPressed) {
             return@OnCheckedChangeListener
         }
@@ -166,9 +182,11 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
             }
             R.id.cb_vibrate -> {
                 alarm.vibrate = isChecked
+                setButtonShadow(button, isChecked)
             }
             R.id.cb_sound -> {
                 alarm.sound = isChecked
+                setButtonShadow(button, isChecked)
             }
             else -> {
                 val index = findIndex(button.id)

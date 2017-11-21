@@ -5,15 +5,13 @@
             <size android:width="@dimen/normal_0_icon_size"
                 android:height="@dimen/normal_0_icon_size" />
             <solid android:color="@color/main_yellow"/>
-            <stroke android:color="@color/dark_yellow" android:width="@dimen/filter_box_stroke"/>
         </shape>
     </item>
     <item>
         <shape android:shape="oval">
             <size android:width="@dimen/normal_0_icon_size"
                 android:height="@dimen/normal_0_icon_size" />
-            <solid android:color="@color/light_grey_background_color"/>
-            <stroke android:color="@color/dark_yellow" android:width="@dimen/filter_box_stroke"/>
+            <solid android:color="@color/light_grey_color"/>
         </shape>
     </item>
 </selector>

@@ -20,11 +20,9 @@
     <color name="deep_green">#40ba83</color>
     <color name="light_green">#5ed19f</color>
 
-    <color name="main_yellow">#eac00d</color>
-    <color name="dark_yellow">#a7a36a</color>
+    <color name="light_yellow">#ffe082</color>
+    <color name="main_yellow">#f7cf54</color>
     <color name="main_grey">#e5e9ea</color>
-
-    <color name="brown">#bca993</color>
 
     <color name="tab_background_color">#252121</color>
     <color name="status_bar_color">#141212</color>

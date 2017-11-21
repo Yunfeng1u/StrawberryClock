@@ -15,11 +15,23 @@
         <item name="android:layout_marginEnd">@dimen/medium_3_space</item>
     </style>
 
+    <style name="repeat_mode_style" parent="white_text_style">
+        <item name="android:background">@drawable/shape_selector_repeat</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/small_1_text_size</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingTop">@dimen/tiny_1_space</item>
+        <item name="android:paddingBottom">@dimen/tiny_1_space</item>
+        <item name="android:paddingStart">@dimen/small_2_space</item>
+        <item name="android:paddingEnd">@dimen/small_2_space</item>
+    </style>
+
     <style name="repeat_days_style" parent="dark_grey_text_style">
         <item name="android:background">@drawable/shape_selector_week</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text_selector_week</item>
     </style>
 
 </resources>

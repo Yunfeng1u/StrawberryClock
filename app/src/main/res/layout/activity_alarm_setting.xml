@@ -77,44 +77,43 @@
             </RelativeLayout>
 
             <RelativeLayout
-                style="@style/light_button_layout_style"
+                style="@style/MWStyle"
+                android:layout_marginTop="@dimen/medium_1_space"
+                android:layout_marginBottom="@dimen/medium_1_space"
+                android:layout_marginStart="@dimen/medium_3_space"
+                android:layout_marginEnd="@dimen/medium_3_space"
                 android:background="@drawable/shape_round_white">
 
                 <RelativeLayout
                     android:id="@+id/rl_quick_repeat"
+                    android:layout_marginTop="@dimen/medium_1_space"
+                    android:paddingStart="@dimen/medium_1_space"
+                    android:paddingEnd="@dimen/medium_1_space"
                     style="@style/MWStyle">
 
                     <TextView
                         style="@style/dark_grey_text_style"
+                        android:layout_centerVertical="true"
                         android:text="闹钟重复" />
 
                     <CheckBox
                         android:id="@+id/cb_everyday"
-                        style="@style/dark_grey_text_style"
-                        android:layout_centerVertical="true"
+                        style="@style/repeat_mode_style"
                         android:layout_marginEnd="@dimen/small_3_space"
                         android:layout_toStartOf="@+id/cb_weekday"
-                        android:background="@drawable/shape_selector_mode"
-                        android:button="@null"
                         android:text="每天" />
 
                     <CheckBox
                         android:id="@+id/cb_weekday"
-                        style="@style/dark_grey_text_style"
-                        android:layout_centerVertical="true"
+                        style="@style/repeat_mode_style"
                         android:layout_marginEnd="@dimen/small_3_space"
                         android:layout_toStartOf="@+id/cb_weekend"
-                        android:background="@drawable/shape_selector_mode"
-                        android:button="@null"
                         android:text="平日" />
 
                     <CheckBox
                         android:id="@+id/cb_weekend"
-                        style="@style/dark_grey_text_style"
+                        style="@style/repeat_mode_style"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/shape_selector_mode"
-                        android:button="@null"
                         android:text="周末" />
 
                 </RelativeLayout>
@@ -122,12 +121,16 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/cl_repeat_days"
                     style="@style/MWStyle"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/medium_1_space"
                     android:layout_below="@+id/rl_quick_repeat"
-                    android:layout_marginTop="@dimen/small_3_space">
+                    android:layout_marginTop="@dimen/medium_1_space">
 
                     <CheckBox
                         android:id="@+id/cb_weekday_1"
                         style="@style/repeat_days_style"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
                         android:text="一"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toLeftOf="@+id/cb_weekday_2" />
@@ -175,31 +178,59 @@
                         app:layout_constraintRight_toRightOf="parent" />
                 </android.support.constraint.ConstraintLayout>
 
+                <include
+                    android:id="@+id/line"
+                    android:layout_below="@+id/cl_repeat_days"
+                    android:layout_height="@dimen/small_1_space"
+                    android:layout_width="match_parent"
+                    layout="@layout/divider_line_light_grey_dash"/>
+
                 <RelativeLayout
                     android:id="@+id/rl_notify_mode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cl_repeat_days">
+                    android:layout_below="@+id/line"
+                    android:paddingTop="@dimen/small_3_space"
+                    android:paddingBottom="@dimen/small_3_space"
+                    android:paddingStart="@dimen/medium_1_space"
+                    android:paddingEnd="@dimen/medium_1_space"
+                    style="@style/MWStyle">
+
+                    <TextView
+                        style="@style/dark_grey_text_style"
+                        android:layout_centerVertical="true"
+                        android:text="提醒模式" />
 
                     <CheckBox
                         android:id="@+id/cb_vibrate"
                         style="@style/dark_grey_text_style"
                         android:layout_toStartOf="@+id/cb_sound"
+                        android:layout_marginEnd="@dimen/small_3_space"
+                        android:layout_centerVertical="true"
                         android:background="@drawable/shape_selector_mode"
                         android:button="@null"
-                        android:padding="@dimen/small_3_space"
+                        android:paddingTop="@dimen/small_1_space"
+                        android:paddingBottom="@dimen/small_1_space"
+                        android:paddingStart="@dimen/small_3_space"
+                        android:paddingEnd="@dimen/small_3_space"
                         android:text="震动"
+                        android:elevation="@dimen/small_3_space"
+                        android:textColor="@color/text_selector_week"
                         android:textSize="@dimen/small_5_text_size" />
 
                     <CheckBox
                         android:id="@+id/cb_sound"
                         style="@style/dark_grey_text_style"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
                         android:background="@drawable/shape_selector_mode"
                         android:button="@null"
-                        android:padding="@dimen/small_3_space"
+                        android:paddingTop="@dimen/small_1_space"
+                        android:paddingBottom="@dimen/small_1_space"
+                        android:paddingStart="@dimen/small_3_space"
+                        android:paddingEnd="@dimen/small_3_space"
                         android:text="响铃"
+                        android:textColor="@color/text_selector_week"
                         android:textSize="@dimen/small_5_text_size" />
+
                 </RelativeLayout>
 
             </RelativeLayout>
@@ -218,7 +249,7 @@
             android:layout_width="@dimen/normal_0_icon_size"
             android:layout_height="@dimen/normal_0_icon_size"
             android:layout_margin="@dimen/small_3_space"
-            android:src="@drawable/ic_add_black_24dp" />
+            android:src="@drawable/svg_add_white" />
 
         <TextView
             android:id="@+id/tv_cancel"

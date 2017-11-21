@@ -2,14 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="true">
         <shape>
-            <corners android:radius="@dimen/small_1_space"/>
-            <solid android:color="@color/main_yellow"/>
+            <corners android:radius="@dimen/half_circle_radius"/>
+            <solid android:color="@color/light_orange"/>
         </shape>
     </item>
     <item>
         <shape>
-            <corners android:radius="@dimen/small_1_space"/>
-            <solid android:color="@color/light_grey_color"/>
+            <corners android:radius="@dimen/half_circle_radius"/>
+            <solid android:color="@color/medium_grey_color"/>
         </shape>
     </item>
 </selector>
