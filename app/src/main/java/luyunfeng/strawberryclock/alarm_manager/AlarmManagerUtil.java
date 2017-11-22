@@ -7,6 +7,8 @@ import android.content.Intent;
 
 import java.util.Calendar;
 
+import luyunfeng.strawberryclock.Alarm;
+import luyunfeng.strawberryclock.BuildConfig;
 import luyunfeng.strawberryclock.utils.DeviceUtils;
 
 /**
@@ -14,7 +16,7 @@ import luyunfeng.strawberryclock.utils.DeviceUtils;
  */
 public class AlarmManagerUtil {
 
-    public static final String ALARM_ACTION = "com.loonggg.alarm.clock";
+    public static final String ALARM_ACTION = BuildConfig.APPLICATION_ID + ".alarm";
 
     public static void setAlarmTime(Context context, long timeInMillis, Intent intent) {
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -32,9 +34,24 @@ public class AlarmManagerUtil {
         am.cancel(pi);
     }
 
+
+    public static void setAlarm(Context context, Alarm alarm) {
+        int soundOrVibrator;
+        if (alarm.sound && alarm.vibrate) {
+            soundOrVibrator = 2;
+        } else if (alarm.sound) {
+            soundOrVibrator = 1;
+        } else {
+            soundOrVibrator = 0;
+        }
+        AlarmManagerUtil.setAlarm(context, 0, alarm.hour, alarm.minute, alarm.id, Integer.parseInt(weeks[i]), alarm.note, soundOrVibrator)
+    }
+
     /**
-     * @param flag            周期性时间间隔的标志,flag = 0 表示一次性的闹钟, flag = 1 表示每天提醒的闹钟(1天的时间间隔),flag = 2
-     *                        表示按周每周提醒的闹钟（一周的周期性时间间隔）
+     * @param flag            周期性时间间隔的标志,
+     *                        flag = 0 表示一次性的闹钟,
+     *                        flag = 1 表示每天提醒的闹钟(1天的时间间隔),
+     *                        flag = 2 表示按周每周提醒的闹钟（一周的周期性时间间隔）
      * @param hour            时
      * @param minute          分
      * @param id              闹钟的id
@@ -64,7 +81,7 @@ public class AlarmManagerUtil {
                 .FLAG_CANCEL_CURRENT);
 
         AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
-        am.setWindow(AlarmManager.RTC_WAKEUP, calMethod(week, calendar.getTimeInMillis()),
+        am.setWindow(AlarmManager.RTC_WAKEUP, getStartTime(week, calendar.getTimeInMillis()),
                 intervalMillis, sender);
     }
 
@@ -74,7 +91,7 @@ public class AlarmManagerUtil {
      * @param dateTime 传入的是时间戳（设置当天的年月日+从选择框拿来的时分秒）
      * @return 返回起始闹钟时间的时间戳
      */
-    private static long calMethod(int weekflag, long dateTime) {
+    private static long getStartTime(int weekflag, long dateTime) {
         long time = 0;
         //weekflag == 0表示是按天为周期性的时间间隔或者是一次行的，weekfalg非0时表示每周几的闹钟并以周为时间间隔
         if (weekflag != 0) {

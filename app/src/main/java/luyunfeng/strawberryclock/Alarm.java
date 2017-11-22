@@ -5,12 +5,13 @@ package luyunfeng.strawberryclock;
  */
 
 public class Alarm {
-    int hour;
-    int minute;
-    String note;
-    boolean vibrate;
-    boolean sound;
-    boolean[] repeatDays = new boolean[7];
+    public int id;
+    public int hour;
+    public int minute;
+    public String note;
+    public boolean vibrate;
+    public boolean sound;
+    public boolean[] repeatDays = new boolean[7];
 
     public void cancelEveryDay() {
         for (int i = 0; i < repeatDays.length; i++) {

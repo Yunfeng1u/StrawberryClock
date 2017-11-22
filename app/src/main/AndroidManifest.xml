@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="luyunfeng.strawberryclock">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".global.MyApplication"
         android:allowBackup="false"
@@ -25,6 +27,13 @@
         <activity
             android:theme="@style/ActivityTheme"
             android:name=".AlarmSettingActivity" />
+
+        <receiver android:name=".alarm_manager.LoongggAlarmReceiver">
+            <intent-filter>
+                <action android:name="luyunfeng.strawberryclock.alarm"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

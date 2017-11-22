@@ -1,6 +1,7 @@
 package luyunfeng.strawberryclock
 
 import android.app.AlertDialog
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.CheckBox
@@ -14,6 +15,7 @@ import com.wannar.wannar_adroid2.util.kotlin_extentions.setClickCallback
 import com.wannar.wannar_adroid2.util.kotlin_extentions.text
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
 import kotlinx.android.synthetic.main.activity_alarm_setting.*
+import luyunfeng.strawberryclock.alarm_manager.AlarmManagerUtil
 import java.util.*
 
 
@@ -58,16 +60,20 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
             checkBox.setOnCheckedChangeListener(listener)
             checkBox
         })
+
+        val drawable = rl_more_setting.getBackground() as GradientDrawable
+
+        rl_time.post({
+            val radius = rl_time.measuredHeight / 2f
+            val radiusArray = FloatArray(8, {radius})
+            drawable.cornerRadii = radiusArray
+        })
     }
 
     override fun onTimeSet(view: TimePickerDialog?, hourOfDay: Int, minute: Int, second: Int) {
         alarm.hour = hourOfDay
         alarm.minute = minute
         updateTime();
-    }
-
-    private fun setAlarm() {
-
     }
 
     private fun updateTime() {
@@ -129,7 +135,7 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
                 finish()
             }
             R.id.tv_confirm -> {
-                setAlarm()
+                AlarmManagerUtil.setAlarm(this, alarm)
             }
             else ->
                 super.onClick(v)

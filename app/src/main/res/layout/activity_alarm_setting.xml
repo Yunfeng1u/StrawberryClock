@@ -77,7 +77,12 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_more_setting"
                 style="@style/MWStyle"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/medium_1_space"
+                android:paddingBottom="@dimen/medium_1_space"
                 android:layout_marginTop="@dimen/medium_1_space"
                 android:layout_marginBottom="@dimen/medium_1_space"
                 android:layout_marginStart="@dimen/medium_3_space"
@@ -189,7 +194,6 @@
                     android:id="@+id/rl_notify_mode"
                     android:layout_below="@+id/line"
                     android:paddingTop="@dimen/small_3_space"
-                    android:paddingBottom="@dimen/small_3_space"
                     android:paddingStart="@dimen/medium_1_space"
                     android:paddingEnd="@dimen/medium_1_space"
                     style="@style/MWStyle">
@@ -203,7 +207,7 @@
                         android:id="@+id/cb_vibrate"
                         style="@style/dark_grey_text_style"
                         android:layout_toStartOf="@+id/cb_sound"
-                        android:layout_marginEnd="@dimen/small_3_space"
+                        android:layout_margin="@dimen/small_3_space"
                         android:layout_centerVertical="true"
                         android:background="@drawable/shape_selector_mode"
                         android:button="@null"
@@ -212,7 +216,6 @@
                         android:paddingStart="@dimen/small_3_space"
                         android:paddingEnd="@dimen/small_3_space"
                         android:text="震动"
-                        android:elevation="@dimen/small_3_space"
                         android:textColor="@color/text_selector_week"
                         android:textSize="@dimen/small_5_text_size" />
 
@@ -221,6 +224,7 @@
                         style="@style/dark_grey_text_style"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_3_space"
                         android:background="@drawable/shape_selector_mode"
                         android:button="@null"
                         android:paddingTop="@dimen/small_1_space"
