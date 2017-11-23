@@ -1,13 +1,13 @@
 <resources>
 
     <style name="light_button_style" parent="dark_grey_text_style">
-        <item name="android:background">@drawable/shape_circle_white</item>
+        <item name="android:background">@drawable/shape_circle_button</item>
         <item name="android:padding">@dimen/small_3_space</item>
         <item name="android:layout_margin">@dimen/small_3_space</item>
     </style>
 
     <style name="light_button_layout_style" parent="MWStyle">
-        <item name="android:background">@drawable/shape_circle_white</item>
+        <item name="android:background">@drawable/shape_circle_button</item>
         <item name="android:padding">@dimen/medium_1_space</item>
         <item name="android:layout_marginTop">@dimen/medium_1_space</item>
         <item name="android:layout_marginBottom">@dimen/medium_1_space</item>

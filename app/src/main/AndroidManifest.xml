@@ -28,7 +28,11 @@
             android:theme="@style/ActivityTheme"
             android:name=".AlarmSettingActivity" />
 
-        <receiver android:name=".alarm_manager.LoongggAlarmReceiver">
+        <activity
+            android:theme="@style/ActivityTheme"
+            android:name=".alarm_manager.AlertActivity" />
+
+        <receiver android:name=".alarm_manager.AlarmReceiver">
             <intent-filter>
                 <action android:name="luyunfeng.strawberryclock.alarm"/>
             </intent-filter>

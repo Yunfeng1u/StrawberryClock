@@ -2,24 +2,20 @@ package luyunfeng.strawberryclock.alarm_manager;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import luyunfeng.strawberryclock.R;
 import luyunfeng.strawberryclock.alarm_manager.view.SelectRemindCyclePopup;
-import luyunfeng.strawberryclock.alarm_manager.view.SelectRemindWayPopup;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private TextView date_tv;
-    private TimePickerView pvTime;
     private RelativeLayout repeat_rl, ring_rl;
     private TextView tv_repeat_value, tv_ring_value;
     private LinearLayout allLayout;
@@ -32,37 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        allLayout = (LinearLayout) findViewById(R.id.all_layout);
-        set_btn = (Button) findViewById(R.id.set_btn);
-        set_btn.setOnClickListener(this);
-        date_tv = (TextView) findViewById(R.id.date_tv);
-        repeat_rl = (RelativeLayout) findViewById(R.id.repeat_rl);
-        repeat_rl.setOnClickListener(this);
-        ring_rl = (RelativeLayout) findViewById(R.id.ring_rl);
-        ring_rl.setOnClickListener(this);
-        tv_repeat_value = (TextView) findViewById(R.id.tv_repeat_value);
-        tv_ring_value = (TextView) findViewById(R.id.tv_ring_value);
-        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS);
-        pvTime.setTime(new Date());
-        pvTime.setCyclic(false);
-        pvTime.setCancelable(true);
-        //时间选择后回调
-        pvTime.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
-
-            @Override
-            public void onTimeSelect(Date date) {
-                time = getTime(date);
-                date_tv.setText(time);
-            }
-        });
-
-        date_tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pvTime.show();
-            }
-        });
-
     }
 
     public static String getTime(Date date) {
@@ -70,22 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return format.format(date);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.repeat_rl:
-                selectRemindCycle();
-                break;
-            case R.id.ring_rl:
-                selectRingWay();
-                break;
-            case R.id.set_btn:
-                setClock();
-                break;
-            default:
-                break;
-        }
-    }
 
     private void setClock() {
         if (time != null && time.length() > 0) {
@@ -163,33 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         tv_repeat_value.setText("只响一次");
                         cycle = -1;
                         fp.dismiss();
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-    }
-
-
-    public void selectRingWay() {
-        SelectRemindWayPopup fp = new SelectRemindWayPopup(this);
-        fp.showPopup(allLayout);
-        fp.setOnSelectRemindWayPopupListener(new SelectRemindWayPopup
-                .SelectRemindWayPopupOnClickListener() {
-
-            @Override
-            public void obtainMessage(int flag) {
-                switch (flag) {
-                    // 震动
-                    case 0:
-                        tv_ring_value.setText("震动");
-                        ring = 0;
-                        break;
-                    // 铃声
-                    case 1:
-                        tv_ring_value.setText("铃声");
-                        ring = 1;
                         break;
                     default:
                         break;

@@ -65,7 +65,7 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
 
         rl_time.post({
             val radius = rl_time.measuredHeight / 2f
-            val radiusArray = FloatArray(8, {radius})
+            val radiusArray = FloatArray(8, { radius })
             drawable.cornerRadii = radiusArray
         })
     }
@@ -135,6 +135,12 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
                 finish()
             }
             R.id.tv_confirm -> {
+
+                if (!alarm.sound && !alarm.vibrate) {
+                    Toast.info("至少选择一种提醒模式哦")
+                    return
+                }
+
                 AlarmManagerUtil.setAlarm(this, alarm)
             }
             else ->
@@ -142,15 +148,15 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
         }
     }
 
-    fun setButtonShadow(button: CompoundButton, isChecked: Boolean){
-        if(isChecked){
+    fun setButtonShadow(button: CompoundButton, isChecked: Boolean) {
+        if (isChecked) {
             button.elevation = elevation;
-        }else{
+        } else {
             button.elevation = 0f;
         }
     }
 
-    val listener = CompoundButton.OnCheckedChangeListener { button: CompoundButton, isChecked: Boolean ->
+    private val listener = CompoundButton.OnCheckedChangeListener { button: CompoundButton, isChecked: Boolean ->
         if (findIndex(button.id) >= 0) {
             setButtonShadow(button, isChecked)
         }

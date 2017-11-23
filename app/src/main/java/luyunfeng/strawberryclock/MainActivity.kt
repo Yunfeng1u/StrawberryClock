@@ -7,6 +7,8 @@ class MainActivity : BaseActivity() {
 
     override fun init() {
 
+        rv_alarms.adapter
+
     }
 
     override fun setUpViews() {

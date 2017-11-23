@@ -44,7 +44,7 @@ public class AlarmManagerUtil {
         } else {
             soundOrVibrator = 0;
         }
-        AlarmManagerUtil.setAlarm(context, 0, alarm.hour, alarm.minute, alarm.id, Integer.parseInt(weeks[i]), alarm.note, soundOrVibrator)
+        setAlarm(context, alarm.id, alarm.hour, alarm.minute, 0, alarm.repeatDays, alarm.note, soundOrVibrator);
     }
 
     /**
@@ -77,11 +77,33 @@ public class AlarmManagerUtil {
         intent.putExtra("msg", tips);
         intent.putExtra("id", id);
         intent.putExtra("soundOrVibrator", soundOrVibrator);
-        PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent
-                .FLAG_CANCEL_CURRENT);
+        PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        long startTime = getStartTime(week, calendar.getTimeInMillis());
+        AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
+        am.setWindow(AlarmManager.RTC_WAKEUP, startTime, intervalMillis, sender);
+
+        // long timeAfter = startTime - System.currentTimeMillis();
+
+    }
+
+    public static void setAlarm(Context context, int id, int hour, int minute, long intervalMillis,
+                                boolean[] repeatDays, String tips, int soundOrVibrator) {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.add(Calendar.SECOND, 10);
+
+        Intent intent = new Intent(ALARM_ACTION);
+        intent.putExtra("intervalMillis", intervalMillis);
+        intent.putExtra("msg", tips);
+        intent.putExtra("id", id);
+        intent.putExtra("soundOrVibrator", soundOrVibrator);
+        PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
-        am.setWindow(AlarmManager.RTC_WAKEUP, getStartTime(week, calendar.getTimeInMillis()),
+        am.setWindow(AlarmManager.RTC_WAKEUP, getStartTime(0, calendar.getTimeInMillis()),
                 intervalMillis, sender);
     }
 

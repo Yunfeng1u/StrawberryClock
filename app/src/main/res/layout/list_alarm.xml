@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/medium_elevation_size"
+    android:background="@drawable/shape_round_white"
+    android:layout_margin="@dimen/small_3_space"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/dark_grey_text_style"
+        tools:text="08:30"
+        android:textSize="@dimen/small_5_text_size" />
+
+    <TextView
+        android:layout_below="@+id/tv_time"
+        android:id="@+id/tv_note"
+        tools:text="上课"
+        style="@style/medium_grey_text_style" />
+
+    <TextView
+        android:layout_toStartOf="@+id/fl_mode"
+        android:layout_alignBottom="@+id/fl_mode"
+        android:id="@+id/tv_mode"
+        tools:text="美洋洋"
+        style="@style/medium_grey_text_style" />
+
+    <FrameLayout
+        android:id="@+id/fl_mode"
+        android:background="@drawable/shape_circle_white"
+        android:layout_alignParentEnd="true"
+        android:layout_width="@dimen/normal_1_icon_size"
+        android:layout_height="@dimen/normal_1_icon_size">
+        <ImageView
+            android:id="@+id/iv_mode"
+            android:layout_gravity="center"
+            style="@style/normal_image_style"
+            tools:src="@mipmap/ic_launcher_round"
+            android:layout_width="@dimen/normal_0_icon_size"
+            android:layout_height="@dimen/normal_0_icon_size" />
+    </FrameLayout>
+</RelativeLayout>
