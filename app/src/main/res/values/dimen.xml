@@ -21,7 +21,7 @@
     <dimen name="normal_2_icon_size">@dimen/dp48</dimen>
     <dimen name="normal_3_icon_size">@dimen/dp56</dimen>
 
-    <dimen name="large_0_icon_size">@dimen/dp60</dimen>
+    <dimen name="large_0_icon_size">@dimen/dp64</dimen>
     <dimen name="large_1_icon_size">@dimen/dp80</dimen>
     <dimen name="large_2_icon_size">@dimen/dp90</dimen>
     <dimen name="large_3_icon_size">@dimen/dp110</dimen>

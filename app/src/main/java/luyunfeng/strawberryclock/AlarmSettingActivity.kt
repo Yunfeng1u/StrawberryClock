@@ -16,12 +16,11 @@ import com.wannar.wannar_adroid2.util.kotlin_extentions.text
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
 import kotlinx.android.synthetic.main.activity_alarm_setting.*
 import luyunfeng.strawberryclock.alarm_manager.AlarmManagerUtil
+import luyunfeng.strawberryclock.global.Constant
 import java.util.*
 
 
 class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener {
-
-    val TIME_FORMAT = "%02d:%02d"
 
     lateinit var alarm: Alarm
 
@@ -77,7 +76,7 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
     }
 
     private fun updateTime() {
-        tv_time.text(StringUtils.format(TIME_FORMAT, alarm.hour, alarm.minute))
+        tv_time.text(StringUtils.format(Constant.TIME_FORMAT, alarm.hour, alarm.minute))
     }
 
     private fun updateNote() {
@@ -217,29 +216,11 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
     }
 
     private fun updateRepeatButtons() {
-        if (alarm.repeatDays[0]
-                && alarm.repeatDays[1]
-                && alarm.repeatDays[2]
-                && alarm.repeatDays[3]
-                && alarm.repeatDays[4]
-                && alarm.repeatDays[5]
-                && alarm.repeatDays[6]) {
+        if (AlarmManagerUtil.isEveryDay(alarm.repeatDays)) {
             updateRepeatButtons(true, false, false)
-        } else if (alarm.repeatDays[0]
-                && alarm.repeatDays[1]
-                && alarm.repeatDays[2]
-                && alarm.repeatDays[3]
-                && alarm.repeatDays[4]
-                && !alarm.repeatDays[5]
-                && !alarm.repeatDays[6]) {
+        } else if (AlarmManagerUtil.isWeekday(alarm.repeatDays)) {
             updateRepeatButtons(false, true, false)
-        } else if (!alarm.repeatDays[0]
-                && !alarm.repeatDays[1]
-                && !alarm.repeatDays[2]
-                && !alarm.repeatDays[3]
-                && !alarm.repeatDays[4]
-                && alarm.repeatDays[5]
-                && alarm.repeatDays[6]) {
+        } else if (AlarmManagerUtil.isWeekend(alarm.repeatDays)) {
             updateRepeatButtons(false, false, true)
         } else {
             updateRepeatButtons(false, false, false)
