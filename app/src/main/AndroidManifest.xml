@@ -30,7 +30,7 @@
 
         <activity
             android:theme="@style/ActivityTheme"
-            android:name=".alarm_manager.AlertActivity" />
+            android:name=".AlertActivity" />
 
         <receiver android:name=".alarm_manager.AlarmReceiver">
             <intent-filter>

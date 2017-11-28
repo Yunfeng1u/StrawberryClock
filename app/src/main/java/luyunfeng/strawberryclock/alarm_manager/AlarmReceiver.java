@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import luyunfeng.strawberryclock.AlertActivity;
+
 /**
  * Created by loongggdroid on 2016/3/21.
  */

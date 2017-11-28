@@ -9,7 +9,7 @@ import com.wannar.base_library.tips.Toast;
 
 import java.util.Calendar;
 
-import luyunfeng.strawberryclock.Alarm;
+import luyunfeng.strawberryclock.model.Alarm;
 import luyunfeng.strawberryclock.BuildConfig;
 import luyunfeng.strawberryclock.global.Constant;
 import luyunfeng.strawberryclock.utils.DeviceUtils;
@@ -47,11 +47,11 @@ public class AlarmManagerUtil {
         } else {
             soundOrVibrator = 0;
         }
-        setAlarm(context, alarm.id, alarm.hour, alarm.minute, 0, alarm.repeatDays, alarm.note, soundOrVibrator);
+        setAlarm(context, alarm.id, alarm.hour, alarm.minute, alarm.repeatDays, alarm.note, soundOrVibrator);
     }
 
-    public static void setAlarm(Context context, int id, int hour, int minute, long intervalMillis,
-                                boolean[] repeatDays, String tips, int soundOrVibrator) {
+    public static void setAlarm(Context context, int id, int hour, int minute,
+                                boolean[] repeatDays, String note, int soundOrVibrator) {
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, hour);
@@ -59,16 +59,16 @@ public class AlarmManagerUtil {
         calendar.add(Calendar.SECOND, 10);
 
         Intent intent = new Intent(ALARM_ACTION);
-        intent.putExtra("intervalMillis", intervalMillis);
-        intent.putExtra("msg", tips);
+        intent.putExtra("note", note);
         intent.putExtra("id", id);
         intent.putExtra("soundOrVibrator", soundOrVibrator);
+        intent.putExtra("repeatDays", repeatDays);
         PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         long startTime = getStartTime(repeatDays, calendar.getTimeInMillis());
 
         AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
-        am.setWindow(AlarmManager.RTC_WAKEUP, startTime, intervalMillis, sender);
+        am.setWindow(AlarmManager.RTC_WAKEUP, startTime, 0, sender);
 
         Toast.info(getFormatGapTime(startTime));
 

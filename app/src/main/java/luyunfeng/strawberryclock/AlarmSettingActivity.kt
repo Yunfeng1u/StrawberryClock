@@ -17,6 +17,8 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog
 import kotlinx.android.synthetic.main.activity_alarm_setting.*
 import luyunfeng.strawberryclock.alarm_manager.AlarmManagerUtil
 import luyunfeng.strawberryclock.global.Constant
+import luyunfeng.strawberryclock.model.Alarm
+import luyunfeng.strawberryclock.model.AlarmService
 import java.util.*
 
 
@@ -141,6 +143,8 @@ class AlarmSettingActivity : BaseActivity(), TimePickerDialog.OnTimeSetListener 
                 }
 
                 AlarmManagerUtil.setAlarm(this, alarm)
+                AlarmService.addAlarm(alarm)
+                finish()
             }
             else ->
                 super.onClick(v)

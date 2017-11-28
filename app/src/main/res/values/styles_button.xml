@@ -6,7 +6,16 @@
         <item name="android:layout_margin">@dimen/small_3_space</item>
     </style>
 
-    <style name="light_button_layout_style" parent="MWStyle">
+    <style name="normal_button_style" parent="dark_grey_text_style">
+        <item name="android:background">@drawable/shape_normal_button</item>
+        <item name="android:padding">@dimen/small_3_space</item>
+        <item name="android:textSize">@dimen/small_5_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="light_button_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/action_bar_size</item>
         <item name="android:background">@drawable/shape_circle_button</item>
         <item name="android:padding">@dimen/medium_1_space</item>
         <item name="android:layout_marginTop">@dimen/medium_1_space</item>
