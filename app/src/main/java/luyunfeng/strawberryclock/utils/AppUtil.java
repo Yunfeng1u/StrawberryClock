@@ -30,6 +30,8 @@ public class AppUtil {
 
         ResourceHelper.init(application);
         Toast.init(MyApplication.getContext());
+        boxStore = MyObjectBox.builder().androidContext(application).build();
+
         //HttpRequestImpl.init();
 
         application.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {

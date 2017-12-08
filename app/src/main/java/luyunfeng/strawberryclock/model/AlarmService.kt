@@ -1,11 +1,10 @@
 package luyunfeng.strawberryclock.model
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.wannar.base_library.log.Log
-import luyunfeng.strawberryclock.utils.SPUtils
 import com.google.gson.reflect.TypeToken
+import com.wannar.base_library.log.Log
 import com.wannar.wannar_adroid2.util.kotlin_extentions.isValid
+import luyunfeng.strawberryclock.utils.SPUtils
 
 
 /**
@@ -26,6 +25,7 @@ object AlarmService {
         val tempList = GsonBuilder().create().fromJson<List<Alarm>>(json, type)
 
         if (tempList.isValid()) {
+            list.clear()
             list.addAll(tempList)
         }
 
@@ -87,5 +87,9 @@ object AlarmService {
         val json = GsonBuilder().create().toJson(list)
         Log.d(json)
         SPUtils.saveAlarms(json)
+    }
+
+    fun getAlarm(id: Int) {
+
     }
 }

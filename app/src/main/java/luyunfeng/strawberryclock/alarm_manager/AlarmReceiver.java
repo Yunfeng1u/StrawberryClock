@@ -13,16 +13,30 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        long intervalMillis = intent.getLongExtra("intervalMillis", 0);
-        if (intervalMillis != 0) {
-            AlarmManagerUtil.setAlarmTime(context, System.currentTimeMillis() + intervalMillis, intent);
+        if (intent.getAction().equals(AlarmManagerUtil.ALARM_ACTION)) {
+            int id = intent.getIntExtra("id", 0);
+            if (id > 0){
+                intent.putExtra("id", id);
+
+                if (!AlarmManagerUtil.isNotRepeat()) {
+                    AlarmManagerUtil.setAlarm(context, id, AlarmManagerUtil.getNextTime(), intent);
+                }
+
+                String note = intent.getStringExtra("note");
+                boolean sound = intent.getBooleanExtra("sound", false);
+                boolean vibrate = intent.getBooleanExtra("vibrate", false);
+
+                if (!sound && !vibrate){
+                    vibrate = true;
+                }
+
+                Intent clockIntent = new Intent(context, AlertActivity.class);
+                clockIntent.putExtra("note", note);
+                clockIntent.putExtra("sound", sound);
+                clockIntent.putExtra("vibrate", vibrate);
+                clockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(clockIntent);
+            }
         }
-        String msg = intent.getStringExtra("msg");
-        int flag = intent.getIntExtra("soundOrVibrator", 0);
-        Intent clockIntent = new Intent(context, AlertActivity.class);
-        clockIntent.putExtra("msg", msg);
-        clockIntent.putExtra("flag", flag);
-        clockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(clockIntent);
     }
 }

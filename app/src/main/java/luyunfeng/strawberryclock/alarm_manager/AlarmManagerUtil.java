@@ -21,12 +21,10 @@ public class AlarmManagerUtil {
 
     public static final String ALARM_ACTION = BuildConfig.APPLICATION_ID + ".alarm";
 
-    public static void setAlarmTime(Context context, long timeInMillis, Intent intent) {
-        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        PendingIntent sender = PendingIntent.getBroadcast(context, intent.getIntExtra("id", 0),
-                intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        int interval = (int) intent.getLongExtra("intervalMillis", 0);
-        am.setWindow(AlarmManager.RTC_WAKEUP, timeInMillis, interval, sender);
+    public static void setAlarm(Context context, int id, long startTime, Intent intent){
+        PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
+        am.setWindow(AlarmManager.RTC_WAKEUP, startTime, 0, sender);
     }
 
     public static void cancelAlarm(Context context, String action, int id) {
@@ -39,39 +37,31 @@ public class AlarmManagerUtil {
 
 
     public static void setAlarm(Context context, Alarm alarm) {
-        int soundOrVibrator;
-        if (alarm.sound && alarm.vibrate) {
-            soundOrVibrator = 2;
-        } else if (alarm.sound) {
-            soundOrVibrator = 1;
-        } else {
-            soundOrVibrator = 0;
-        }
-        setAlarm(context, alarm.id, alarm.hour, alarm.minute, alarm.repeatDays, alarm.note, soundOrVibrator);
-    }
-
-    public static void setAlarm(Context context, int id, int hour, int minute,
-                                boolean[] repeatDays, String note, int soundOrVibrator) {
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.HOUR_OF_DAY, alarm.hour);
+        calendar.set(Calendar.MINUTE, alarm.minute);
         calendar.add(Calendar.SECOND, 10);
 
         Intent intent = new Intent(ALARM_ACTION);
-        intent.putExtra("note", note);
-        intent.putExtra("id", id);
-        intent.putExtra("soundOrVibrator", soundOrVibrator);
-        intent.putExtra("repeatDays", repeatDays);
-        PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        intent.putExtra("note", alarm.note);
+        intent.putExtra("id", alarm.id);
+        intent.putExtra("sound", alarm.sound);
+        intent.putExtra("vibrate", alarm.vibrate);
+        intent.putExtra("repeatDays", alarm.repeatDays);
 
-        long startTime = getStartTime(repeatDays, calendar.getTimeInMillis());
+        long startTime = getStartTime(alarm.repeatDays, calendar.getTimeInMillis());
 
-        AlarmManager am = DeviceUtils.getSystemService(Context.ALARM_SERVICE);
-        am.setWindow(AlarmManager.RTC_WAKEUP, startTime, 0, sender);
+        setAlarm(context, alarm.id, startTime, intent);
 
         Toast.info(getFormatGapTime(startTime));
+    }
 
+    public static long getNextTime(Alarm alarm) {
+
+
+
+        return 0;
     }
 
     private static long getStartTime(boolean[] repeatDays, long dateTime) {

@@ -1,12 +1,20 @@
 package luyunfeng.strawberryclock.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
+
 /**
  * Created by luyunfeng on 17/11/15.
  */
 
+@Entity
 public class Alarm {
 
-    public int id;
+    @Id
+    public long id;
 
     public int hour;
 
@@ -20,7 +28,19 @@ public class Alarm {
     /**
      * 周期重复
      */
-    public boolean[] repeatDays = new boolean[7];
+    public List<Boolean> repeatDays = new ArrayList<Boolean>(){
+        {
+            add(false);
+            add(false);
+            add(false);
+            add(false);
+            add(false);
+            add(false);
+            add(false);
+        }
+    };
+
+
 
     /**
      * 是否震动提醒
@@ -42,41 +62,42 @@ public class Alarm {
      */
     public int mode = 0;
 
-    public void cancelEveryDay() {
-        for (int i = 0; i < repeatDays.length; i++) {
-            repeatDays[i] = false;
-        }
-    }
-
-    public void cancelWeekDays() {
-        for (int i = 0; i < 5; i++) {
-            repeatDays[i] = false;
-        }
-    }
-
-    public void cancelWeekend() {
-        for (int i = 5; i < repeatDays.length; i++) {
-            repeatDays[i] = false;
-        }
-    }
-
-    public void repeatEveryday() {
-        for (int i = 0; i < repeatDays.length; i++) {
-            repeatDays[i] = true;
-        }
-    }
-
-    public void repeatWeekend() {
-        cancelWeekDays();
-        for (int i = 5; i < repeatDays.length; i++) {
-            repeatDays[i] = true;
-        }
-    }
-
-    public void repeatWeekDays() {
-        for (int i = 0; i < 5; i++) {
-            repeatDays[i] = true;
-        }
-        cancelWeekend();
-    }
+//
+//    public void cancelEveryDay() {
+//        for (int i = 0; i < repeatDays.length; i++) {
+//            repeatDays[i] = false;
+//        }
+//    }
+//
+//    public void cancelWeekDays() {
+//        for (int i = 0; i < 5; i++) {
+//            repeatDays[i] = false;
+//        }
+//    }
+//
+//    public void cancelWeekend() {
+//        for (int i = 5; i < repeatDays.length; i++) {
+//            repeatDays[i] = false;
+//        }
+//    }
+//
+//    public void repeatEveryday() {
+//        for (int i = 0; i < repeatDays.length; i++) {
+//            repeatDays[i] = true;
+//        }
+//    }
+//
+//    public void repeatWeekend() {
+//        cancelWeekDays();
+//        for (int i = 5; i < repeatDays.length; i++) {
+//            repeatDays[i] = true;
+//        }
+//    }
+//
+//    public void repeatWeekDays() {
+//        for (int i = 0; i < 5; i++) {
+//            repeatDays[i] = true;
+//        }
+//        cancelWeekend();
+//    }
 }
